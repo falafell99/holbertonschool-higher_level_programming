@@ -1,0 +1,11 @@
+#!/usr/bin/python3
+no_c = __import__('5-no_c').no_c
+
+print(no_c("Best School"))
+print(no_c("Chicago"))
+print(no_c("C is fun!"))
+
+# Дополнительные тесты
+print(no_c(""))
+print(no_c("cccCCC"))
+print(no_c("abcABC123"))
