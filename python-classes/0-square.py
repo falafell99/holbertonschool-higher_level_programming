@@ -2,6 +2,7 @@
 """Square class definition."""
 
 
+
 class Square:
     """Defines a square by its size."""
 
