@@ -4,7 +4,6 @@
 
 class Rectangle:
     """Defines a rectangle with width and height."""
-    
     number_of_instances = 0
     print_symbol = "#"
 
@@ -83,7 +82,6 @@ class Rectangle:
         """
         if self.__width == 0 or self.__height == 0:
             return ""
-        
         symbol = str(self.print_symbol)
         rect_str = ""
         for i in range(self.__height):
