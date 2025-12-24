@@ -1,12 +1,10 @@
-Test the BaseGeometry class
+Test BaseGeometry class
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
-
-Test instantiation
 >>> bg = BaseGeometry()
 >>> isinstance(bg, BaseGeometry)
 True
 
-Test area method raises exception
+Test area() raises Exception
 >>> try:
 ...     bg.area()
 ... except Exception as e:
@@ -16,9 +14,8 @@ area() is not implemented
 Test integer_validator with valid values
 >>> bg.integer_validator("width", 5)
 >>> bg.integer_validator("height", 10)
->>> bg.integer_validator("size", 1)
 
-Test integer_validator with non-integer
+Test integer_validator with string
 >>> try:
 ...     bg.integer_validator("name", "John")
 ... except TypeError as e:
@@ -45,3 +42,38 @@ Test integer_validator with float
 ... except TypeError as e:
 ...     print(str(e))
 value must be an integer
+
+Test integer_validator with tuple
+>>> try:
+...     bg.integer_validator("age", (4,))
+... except TypeError as e:
+...     print(str(e))
+age must be an integer
+
+Test integer_validator with list
+>>> try:
+...     bg.integer_validator("age", [3])
+... except TypeError as e:
+...     print(str(e))
+age must be an integer
+
+Test integer_validator with bool (True)
+>>> try:
+...     bg.integer_validator("age", True)
+... except TypeError as e:
+...     print(str(e))
+age must be an integer
+
+Test integer_validator with set
+>>> try:
+...     bg.integer_validator("age", {3, 4})
+... except TypeError as e:
+...     print(str(e))
+age must be an integer
+
+Test integer_validator with None
+>>> try:
+...     bg.integer_validator("age", None)
+... except TypeError as e:
+...     print(str(e))
+age must be an integer
