@@ -1,42 +1,44 @@
-#!/usr/bin/python3
-MyList = __import__('1-my_list').MyList
+Test the MyList class
+>>> MyList = __import__('1-my_list').MyList
 
-# Test 1: Basic test
-my_list = MyList()
-my_list.append(1)
-my_list.append(4)
-my_list.append(2)
-my_list.append(3)
-my_list.append(5)
-print(my_list)
-my_list.print_sorted()
-print(my_list)
+Test instantiation
+>>> my_list = MyList()
+>>> isinstance(my_list, list)
+True
 
-print("---")
+Test append and print
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> print(my_list)
+[1, 4, 2, 3, 5]
 
-# Test 2: Empty list
-my_list2 = MyList()
-print(my_list2)
-my_list2.print_sorted()
-print(my_list2)
+Test print_sorted
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
 
-print("---")
+Test original list unchanged
+>>> print(my_list)
+[1, 4, 2, 3, 5]
 
-# Test 3: Single element
-my_list3 = MyList()
-my_list3.append(42)
-print(my_list3)
-my_list3.print_sorted()
-print(my_list3)
+Test empty list
+>>> my_list2 = MyList()
+>>> my_list2.print_sorted()
+[]
 
-print("---")
+Test single element
+>>> my_list3 = MyList()
+>>> my_list3.append(42)
+>>> my_list3.print_sorted()
+[42]
 
-# Test 4: Negative numbers
-my_list4 = MyList()
-my_list4.append(-5)
-my_list4.append(10)
-my_list4.append(-2)
-my_list4.append(0)
-print(my_list4)
-my_list4.print_sorted()
-print(my_list4)
+Test negative numbers
+>>> my_list4 = MyList()
+>>> my_list4.append(-5)
+>>> my_list4.append(10)
+>>> my_list4.append(-2)
+>>> my_list4.append(0)
+>>> my_list4.print_sorted()
+[-5, -2, 0, 10]
