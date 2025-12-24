@@ -1,0 +1,47 @@
+Test the BaseGeometry class
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Test instantiation
+>>> bg = BaseGeometry()
+>>> isinstance(bg, BaseGeometry)
+True
+
+Test area method raises exception
+>>> try:
+...     bg.area()
+... except Exception as e:
+...     print(str(e))
+area() is not implemented
+
+Test integer_validator with valid values
+>>> bg.integer_validator("width", 5)
+>>> bg.integer_validator("height", 10)
+>>> bg.integer_validator("size", 1)
+
+Test integer_validator with non-integer
+>>> try:
+...     bg.integer_validator("name", "John")
+... except TypeError as e:
+...     print(str(e))
+name must be an integer
+
+Test integer_validator with zero
+>>> try:
+...     bg.integer_validator("age", 0)
+... except ValueError as e:
+...     print(str(e))
+age must be greater than 0
+
+Test integer_validator with negative
+>>> try:
+...     bg.integer_validator("distance", -5)
+... except ValueError as e:
+...     print(str(e))
+distance must be greater than 0
+
+Test integer_validator with float
+>>> try:
+...     bg.integer_validator("value", 3.14)
+... except TypeError as e:
+...     print(str(e))
+value must be an integer
