@@ -1,16 +1,7 @@
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 >>> bg = BaseGeometry()
-
-# Тесты из 7-base_geometry_1.txt
->>> bg.integer_validator("age", 1)
->>> bg.integer_validator("age", 5)
->>> bg.integer_validator("age", 100)
-
->>> try:
-...     bg.integer_validator("age", (4,))
-... except TypeError as e:
-...     print(e)
-age must be an integer
+>>> isinstance(bg, BaseGeometry)
+True
 
 >>> try:
 ...     bg.area()
@@ -18,10 +9,9 @@ age must be an integer
 ...     print(str(e))
 area() is not implemented
 
-# Тесты из 7-base_geometry_2.txt
->>> isinstance(bg, BaseGeometry)
-True
-
+>>> bg.integer_validator("age", 1)
+>>> bg.integer_validator("age", 5)
+>>> bg.integer_validator("age", 100)
 >>> bg.integer_validator("my_int", 12)
 >>> bg.integer_validator("width", 89)
 
@@ -43,7 +33,12 @@ age must be greater than 0
 ...     print(str(e))
 distance must be greater than 0
 
-# Дополнительные тесты
+>>> try:
+...     bg.integer_validator("age", (4,))
+... except TypeError as e:
+...     print(str(e))
+age must be an integer
+
 >>> try:
 ...     bg.integer_validator("age", [3])
 ... except TypeError as e:
