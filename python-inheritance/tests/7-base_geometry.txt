@@ -1,6 +1,7 @@
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 >>> bg = BaseGeometry()
 
+# Тесты из 7-base_geometry_1.txt
 >>> bg.integer_validator("age", 1)
 >>> bg.integer_validator("age", 5)
 >>> bg.integer_validator("age", 100)
@@ -12,28 +13,14 @@
 age must be an integer
 
 >>> try:
-...     bg.integer_validator("age", [3])
-... except TypeError as e:
-...     print(e)
-age must be an integer
+...     bg.area()
+... except Exception as e:
+...     print(str(e))
+area() is not implemented
 
->>> try:
-...     bg.integer_validator("age", True)
-... except TypeError as e:
-...     print(e)
-age must be an integer
-
->>> try:
-...     bg.integer_validator("age", {3, 4})
-... except TypeError as e:
-...     print(e)
-age must be an integer
-
->>> try:
-...     bg.integer_validator("age", None)
-... except TypeError as e:
-...     print(e)
-age must be an integer
+# Тесты из 7-base_geometry_2.txt
+>>> isinstance(bg, BaseGeometry)
+True
 
 >>> bg.integer_validator("my_int", 12)
 >>> bg.integer_validator("width", 89)
@@ -41,17 +28,42 @@ age must be an integer
 >>> try:
 ...     bg.integer_validator("name", "John")
 ... except TypeError as e:
-...     print(e)
+...     print(str(e))
 name must be an integer
 
 >>> try:
 ...     bg.integer_validator("age", 0)
 ... except ValueError as e:
-...     print(e)
+...     print(str(e))
 age must be greater than 0
 
 >>> try:
 ...     bg.integer_validator("distance", -4)
 ... except ValueError as e:
-...     print(e)
+...     print(str(e))
 distance must be greater than 0
+
+# Дополнительные тесты
+>>> try:
+...     bg.integer_validator("age", [3])
+... except TypeError as e:
+...     print(str(e))
+age must be an integer
+
+>>> try:
+...     bg.integer_validator("age", True)
+... except TypeError as e:
+...     print(str(e))
+age must be an integer
+
+>>> try:
+...     bg.integer_validator("age", {3, 4})
+... except TypeError as e:
+...     print(str(e))
+age must be an integer
+
+>>> try:
+...     bg.integer_validator("age", None)
+... except TypeError as e:
+...     print(str(e))
+age must be an integer
