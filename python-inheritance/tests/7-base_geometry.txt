@@ -9,6 +9,11 @@ True
 area() is not implemented
 >>> hasattr(bg, 'integer_validator')
 True
+
+# Просто упоминание метода с одним аргументом
+>>> bg.integer_validator
+
+# Основные тесты
 >>> bg.integer_validator("age", 1)
 >>> bg.integer_validator("age", 5)
 >>> bg.integer_validator("age", 100)
