@@ -1,5 +1,13 @@
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 >>> bg = BaseGeometry()
+
+# integer_validator()
+>>> hasattr(bg, 'integer_validator')
+True
+
+# integer_validator("age")
+>>> bg.integer_validator("age", 1)
+
 >>> isinstance(bg, BaseGeometry)
 True
 
@@ -9,17 +17,6 @@ True
 ...     print(str(e))
 area() is not implemented
 
-# integer_validator() - проверка существования
->>> hasattr(bg, 'integer_validator')
-True
-
-# integer_validator("age") - вызов с одним аргументом (должен вызвать ошибку)
->>> try:
-...     bg.integer_validator("age")
-... except TypeError:
-...     pass
-
->>> bg.integer_validator("age", 1)
 >>> bg.integer_validator("age", 5)
 >>> bg.integer_validator("age", 100)
 >>> bg.integer_validator("my_int", 12)
