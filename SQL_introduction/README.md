@@ -98,7 +98,7 @@ sql
 SHOW DATABASES;
 Author
 
-[Your Name]
+Rafael
 
 License
 
