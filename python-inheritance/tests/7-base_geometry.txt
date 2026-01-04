@@ -9,16 +9,17 @@ True
 ...     print(str(e))
 area() is not implemented
 
+# Test: integer_validator()
 >>> hasattr(bg, 'integer_validator')
 True
 
+# Test: integer_validator("age") with two arguments
 >>> bg.integer_validator("age", 1)
 >>> bg.integer_validator("age", 5)
 >>> bg.integer_validator("age", 100)
 >>> bg.integer_validator("my_int", 12)
 >>> bg.integer_validator("width", 89)
 
-# ТОЧНЫЕ сообщения об ошибках
 >>> try:
 ...     bg.integer_validator("name", "John")
 ... except TypeError as e:
