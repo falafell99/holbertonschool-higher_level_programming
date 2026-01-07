@@ -1,3 +1,5 @@
 #!/usr/bin/python3
+output = ""
 for letter in range(97, 123):
-    print(chr(letter), end="")
+    output += chr(letter)
+print("{}".format(output), end="")
