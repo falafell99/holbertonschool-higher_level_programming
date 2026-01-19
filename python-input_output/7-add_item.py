@@ -4,9 +4,11 @@
 import sys
 import os
 
+
 # Import functions from previous tasks
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
+
 
 def main():
     """Main function to add arguments to list and save to file."""
@@ -23,6 +25,7 @@ def main():
 
     # Save the updated list to file
     save_to_json_file(items, filename)
+
 
 if __name__ == "__main__":
     main()
