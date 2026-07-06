@@ -40,7 +40,7 @@ MySQL 8.0+
 Ubuntu 22.04 LTS
 Author
 
-[Your Name]
+Rafael
 
 License
 
